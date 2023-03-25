@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AI search</title>
+	<h1>Welcome to Alfageek's AI World</h1>
+		<style>
+		h1 {
+			text-align: center;
+			color: blue;
+			font-weight: bold;
+			animation: blink 1s infinite;
+		}
+		@keyframes blink {
+			0% {
+				opacity: 1;
+			}
+			50% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+	</style>
+	<style>
+		.dialog {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: stretch;
+			height: 500px;
+			margin: 10px;
+		}
+		.dialog iframe {
+			width: 48%;
+			height: 100%;
+			border: none;
+			background-color: white;
+			box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+		}
+	</style>
+</head>
+<body>
+	<div class="dialog">
+		<iframe src="https://www.phind.com"></iframe>
+		<iframe src="https://www.stablediffusionweb.com"></iframe>
+	</div>
+</body>
+</html>
+
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>访问计数器</title>
+    <style>
+      #counter {
+        font-family: "LCD", sans-serif;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: -0.1em;
+        text-align: center;
+        width: 100px;
+        height: 30px;
+        margin: 0 auto;
+        background-color: #000;
+        color: #0f0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="counter">000000</div>
+    <script>
+      var counter = document.getElementById("counter");
+      var count = 0;
+
+      // 从本地存储中获取计数器的值
+      if (localStorage.getItem("count")) {
+        count = parseInt(localStorage.getItem("count"));
+      }
+
+      // 更新计数器显示
+      function updateCounter() {
+        counter.innerText = count.toString().padStart(8, "0");
+      }
+
+      // 增加计数器的值并保存到本地存储中
+      function incrementCounter() {
+        count++;
+        localStorage.setItem("count", count.toString());
+        updateCounter();
+      }
+
+      // 页面加载时初始化计数器
+      updateCounter();
+
+      // 页面每次刷新时增加计数器的值
+      incrementCounter();
+    </script>
+  </body>
+</html>
